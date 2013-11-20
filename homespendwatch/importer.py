@@ -94,6 +94,14 @@ logging.basicConfig()
 
 from tmpl import *
 
+##### fix config
+DATADIR =  os.path.join(
+                os.path.abspath(
+                 os.path.dirname(__file__)),'../test/data')
+DATABASE_URI = os.path.join(DATADIR, 'money.db')
+lgr.error(DATABASE_URI)
+
+
 def showremaining():
     """ all remaining uncategorised items"""
     conn = sqlite3.connect(DATABASE_URI)
@@ -139,11 +147,14 @@ def categorise(matchers):
     try:
         for r in allrows:
             for matcher in matchers:
-                word, cty_low, cty_mid, cty_high = matcher 
+                word, cty_low, cty_mid, cty_high = matcher
+                lgr.error("Trying to match %s with %s" % (r.desc, word))
+
                 if r.desc.lower().find(word.lower()) >= 0:
+                    lgr.error("Match found: %s %s" % (r.desc, word))
                     updaterow(r.rowid, cty_low, cty_mid, cty_high)
     except Exception, e:
-        print r, matcher
+        print r, matcher, e
   
 
 
@@ -287,12 +298,15 @@ def rs2obj(rs):
 
 
 def load(f):
-    """Given a CSV file of right format. create a transaction in db for eadch row """
+
+    """Given a CSV file of right format. create a transaction in db for eadch
+    row
+
+    """
+    ## inappropriate place to put it.
+    fpath = os.path.join(DATADIR, f)
     hdr = HEADERS
-    try:
-        c = csv.DictReader(open(f), hdr)
-    except:
-        c = csv.DictReader(open(f), hdr[-1:]) ##slice off balance
+    c = csv.DictReader(open(fpath), hdr)
     
     for row in c:
         if row["Date"] == "Date": continue
@@ -560,7 +574,6 @@ def do_chart(chart_data):
         pass
 
 #############################################################
-DATABASE_URI = './money.db'
 
 
 if __name__ == '__main__':

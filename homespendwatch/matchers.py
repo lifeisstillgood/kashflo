@@ -205,6 +205,7 @@ _matchers = [
     ['HSBC CREDIT CARD','','','bankcharge'],
     ['Hays Travel','','','leisure'],
     ['Ulwell Cottage','','','leisure'],
+    ['Acme','','','Testing'],
  ]
 
 
