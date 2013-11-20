@@ -1,0 +1,6 @@
+"Date","Type","Description","out","in","Balance"
+"15 Oct 2013","Direct debit","ACME PLC","£49.12","","£1"
+"15 Oct 2013","Direct debit","ACME PLC","£52.09","","£1"
+"01 Nov 2013","Direct debit","ACME Stores Ltd","£85.63","","£1"
+"10 Nov 2013","Direct debit","ACME Skiing","£156.80","","£1"
+"20 Nov 2013","Transfer to","04-01-01/654321","£100.00","","£1"
