@@ -1,0 +1,162 @@
+ 	Display additional payee details ANNA BRIAN 		
+Go
+			
+	Display additional payee details BARCLAYCARD VISA 	4929492588562008 	
+Go
+			
+	Display additional payee details BETTY LEWIS SCHOOL 	EJJBRIAN 	
+Go
+			
+	Display additional payee details BRITISHGAS 	850022964142 	
+Go
+			
+	Display additional payee details BRITISHGAS-ELEC 	850040960180 	
+Go
+			
+	Display additional payee details DAWN - CLEANER 	DAWN-CLEANER 	
+Go
+			
+	Display additional payee details EMMA GOODMAN 	JJ ANNA BRIAN 	
+Go
+			
+	Display additional payee details J P COSTER 	PAUL BRIAN 	
+Go
+			
+	Display additional payee details JOHN LOGAN 		
+Go
+			
+	Display additional payee details KINGS HILL 	P BRIAN 	
+Go
+			
+	Display additional payee details KINGSHILL ESTATE 	BRIAN 	
+Go
+			
+	Display additional payee details MISS A C HULME 	FROM A & P BRIAN 	
+Go
+			
+	Display additional payee details MISS A MARSHALL 	BILLS 	
+Go
+			
+	Display additional payee details MRS G STRATFORD 		
+Go
+			
+	Display additional payee details MTURNERGARDENS 	18REGENTWAY 	
+Go
+			
+	Display additional payee details P R BRIAN 	FROMNWIDE 	
+Go
+			
+	Display additional payee details PAUL BRIAN 	HSBCPERS 	
+Go
+			
+	Display additional payee details PREMIER HEALTH 	6/243PAULBRIAN 	
+Go
+			
+	Display additional payee details SELECT CREDIT CARD 		
+Go
+			
+	Display additional payee details SERVECOM - SIMON 	servecom-plumbing 	
+Go
+			
+	Display additional payee details STORAGEKING 	UNITGD7-PBRIAN 	
+Go
+			
+	Display additional payee details TONBRIDGE MALLING 	80610265 	
+Go
+			
+	Display additional payee details WINDOWCLEANERZOLD 	18REGENTWAYME194EB 	
+Go
+			
+Cancel selected single payments
+Payees used for regular payments
+Set up a new regular payment
+Select 'Change payee details' to change the payee name, amount or frequency.
+	Payee 	Reference 	Actions
+	Display additional payee details NEXGEN BUSINESS LT 	ADSLPBRIAN 	
+Go
+			
+Cancel selected regular payments
+Payees used for Direct Debits
+Remember to let the company you're paying know when you cancel a Direct Debit. The payee details will not move to your list of cancelled payees until the next time you log in.
+	Organisation 	Reference 	Actions
+	-Hide additional organisation details AVIVA 	3793504EX 	
+Cancel this Direct DebitAVIVA
+	
+
+Last payment date:
+    14/08/2013 
+
+Last payment amount:
+    £156.80 
+
+Reference:
+    3793504EX 
+
+Originator ID:
+    994051
+
+			
+	Display additional payee details AVIVA 	3793542EE 	
+Cancel this Direct DebitAVIVA
+			
+	Display additional payee details AVIVA LIFE 	6596408EL 	
+Cancel this Direct DebitAVIVA LIFE
+			
+	Display additional payee details BRITISH GAS TRADIN 	850042222521 	
+Cancel this Direct DebitBRITISH GAS TRADIN
+			
+	Display additional payee details BRITISH GAS TRADIN 	850040960180 	
+Cancel this Direct DebitBRITISH GAS TRADIN
+			
+	Display additional payee details BT DIRECT DEBITS 	ND56661199 	
+Cancel this Direct DebitBT DIRECT DEBITS
+			
+	Display additional payee details CARD SRVS-HSBC 	5434606034009737 	
+Cancel this Direct DebitCARD SRVS-HSBC
+			
+	Display additional payee details DAVID LLOYD LEISUR 	061110633475 	
+Cancel this Direct DebitDAVID LLOYD LEISUR
+			
+	Display additional payee details DIRECT LINE INS 	37161301/000001/M 	
+Cancel this Direct DebitDIRECT LINE INS
+			
+	Display additional payee details HSA 	C1390351 	
+Cancel this Direct DebitHSA
+			
+	Display additional payee details L&G ASSCE SOC LTD 	0127945848 	
+Cancel this Direct DebitL&G ASSCE SOC LTD
+			
+	Display additional payee details MID KENT WATER LTD 	MKW877301& 	
+Cancel this Direct DebitMID KENT WATER LTD
+			
+	Display additional payee details O2 	GED23022897 	
+Cancel this Direct DebitO2
+			
+	Display additional payee details PINNACLE INSURANCE 	PET000235194 	
+Cancel this Direct DebitPINNACLE INSURANCE
+			
+	Display additional payee details PINNACLE INSURANCE 	PET000235195 	
+Cancel this Direct DebitPINNACLE INSURANCE
+			
+	Display additional payee details PREMIUM CREDIT LTD 	04ABSH9834/01 	
+Cancel this Direct DebitPREMIUM CREDIT LTD
+			
+	Display additional payee details SANTANDER MORTGAGE 	029766997 	
+Cancel this Direct DebitSANTANDER MORTGAGE
+			
+	Display additional payee details SCOTTISH PROVIDENT 	40260224 	
+Cancel this Direct DebitSCOTTISH PROVIDENT
+			
+	Display additional payee details SCOTTISH PROVIDENT 	14285319 	
+Cancel this Direct DebitSCOTTISH PROVIDENT
+			
+	Display additional payee details SKY DIGITAL 	00621049535613 	
+Cancel this Direct DebitSKY DIGITAL
+			
+	Display additional payee details SOUTHERN WATER 	0004038687769 	
+Cancel this Direct DebitSOUTHERN WATER
+			
+	Display additional payee details TONBRIDGE & MALL 	80944553 	
+Cancel this Direct DebitTONBRIDGE & MALL
+			
+	Display additional payee details TV LICENCE QBP1 	2428567214 
