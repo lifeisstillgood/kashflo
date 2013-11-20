@@ -1,6 +1,6 @@
 Importer
 --------
 
-.. automodule:: importer
+.. automodule:: homespendwatch.importer
 
 
