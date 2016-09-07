@@ -205,7 +205,55 @@ _matchers = [
     ['HSBC CREDIT CARD','','','bankcharge'],
     ['Hays Travel','','','leisure'],
     ['Ulwell Cottage','','','leisure'],
- ]
+
+    ['OOPSYDAISYPARTYBUS','','','kids'],
+    ['SHAWBROOK','','','Debt'],
+    ['070116 32896821','','','transfer'],
+    ['070040 10579838','','','transfer'],
+    ['070040 02268734','','','transfer'],
+    ['INHERITANCE LAW','','','probate'],
+    ['CHORUSLAW','','','probate'],
+    ['WALKIES LTD','','','pets'],
+    
+    ['UTILITY WAREHOUSE','','','utilities'],
+    ['AIG LIFE LIMITED','','','insurance'],
+    ['VIRGIN ACTIVE','','','gym'],
+
+    ['THE CHASER INN','','','eat out'],
+    ['CHIQUITO','','','eat out'],
+    ['WAGAMAMA','','','eat out'],
+    ['FRANKIE & BENNYS','','','eat out'],
+    ['BYRON HAMBURGERS','','','eat out'],
+
+    
+    ['UW CASHBACK CARD','','','utilities'],
+    ['ATM Withdrawal','','','cash'],
+    ['KENT MEDICAL IMAGING LTD','','','health'],
+    ['Transfer to:074456 40693584','','','transfer'],
+    ['WILLROSECLEANING','','','household'],
+    ['VIRGIN ACTIVE','','','gym'],
+    ['PRUDENTIAL','','','insurance'],
+    ['BE WISER INSURANCE','','','insurance'],
+
+##
+    ['DISNEY STORE','','','kids'],
+    ['THE HUNGRY GUEST','','','eat out'],
+    ['KINGSHILL PHARMACY','','','health'],
+    ['BRICKS 4 KIDZ','','','kids'],
+    ['PRUDENTIAL','','','insurance'],
+
+    ['PARTY BUS','','','kids'],
+    ['WILLROSECLEANING','','','household'],
+    ['VIRGIN ACTIVE','','','gym'],
+    ['PRUDENTIAL','','','insurance'],
+    ['BE WISER INSURANCE','','','insurance'],
+
+    ['Transfer to:074456 40693584','','','transfer'],
+    ['WILLROSECLEANING','','','household'],
+    ['VIRGIN ACTIVE','','','gym'],
+    ['PRUDENTIAL','','','insurance'],
+    ['BE WISER INSURANCE','','','insurance'],
+]
 
 
 

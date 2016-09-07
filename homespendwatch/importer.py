@@ -2,11 +2,11 @@
 #! -*- coding: utf-8 -*-
 
 """
-
 Importer collection of features
 ===============================
 
-(cos its not really a program, a library or anything much more than a mess)
+(cos its not really a program, a library or anything much more than a
+mess)
 
 
 
@@ -42,7 +42,7 @@ Aim: to allow me to download csv files from Bank(s)
 
    python importer.py summary
 
-
+   Actually run run.sh and see this from web)
 
 
 
@@ -109,10 +109,12 @@ def showremaining():
 <td>%s </td>
 <td>%s </td>
 <td>%s </td>
+<td>%s </td>
+
 </tr>"""  
 
     for r in rows:
-        outstr += s % (r.desc, r.moneyin, r.moneyout)
+        outstr += s % (r.desc, r.moneyin, r.moneyout, r.tdate)
 
     return outstr + "</table>"
 
@@ -132,6 +134,7 @@ def test(word):
 
 def categorise(matchers):
     """
+    I should use fnmatch in here ?
     """
 
     allrows = allremaining()
@@ -162,14 +165,16 @@ def updaterow(rowid, cty_low, cty_mid, cty_high):
 
 class tran(object):
     """ """
-    def __init__(self, rowid, desc, moneyin, moneyout):
+    def __init__(self, rowid, desc, moneyin, moneyout, tdate):
         self.desc = desc
         self.moneyin = moneyin
         self.moneyout = moneyout
         self.rowid = rowid
+        self.tdate = tdate 
 
     def __repr__(self):
-        x = "%s/%s/%s" % (self.desc, self.moneyin, self.moneyout)
+        x = "%s/%s/%s-%s" % (self.desc, self.moneyin, self.moneyout,
+                          self.tdate)
         return x
     
 
@@ -255,6 +260,7 @@ def rs2obj(rs):
     hdr =["Date","Type","Description","out","in","Balance"]
     for row in rs:
         rowid = row[0]
+        date = row[1]
         desc = str(row[2]) + ":" + str(row[3])
         moneyout = row[4]
         moneyin = row[5]
@@ -280,7 +286,7 @@ def rs2obj(rs):
             raise e 
 
         
-        rows.append(tran(rowid, desc, moneyin, moneyout))
+        rows.append(tran(rowid, desc, moneyin, moneyout, date))
 
     return rows
 
@@ -349,6 +355,11 @@ def table_from_rs_bycategory(rs):
 
     return tblbody,totalval
 
+def past6mths():
+    '''Give me a list of first day of past 6 mths
+    '''
+    pass
+
 def mk_monthly_summary_links(category_str):
     """
     Only show the last 6 mths
@@ -357,13 +368,19 @@ def mk_monthly_summary_links(category_str):
     aaarggh - this is painful.
     do it simple style for now
     """
+    # calc last 6 mths
     
-    last_6_mths = [datetime.datetime(year=2013, month=6, day=1),
-                   datetime.datetime(year=2013, month=7, day=1),
-                   datetime.datetime(year=2013, month=8, day=1),
-                   datetime.datetime(year=2013, month=9, day=1),
-                   datetime.datetime(year=2013, month=10, day=1),
-                   datetime.datetime(year=2013, month=11, day=1),]
+    today = datetime.datetime.today()
+    delta = datetime.timedelta(days=30)
+    last_6_mths = []
+    for i in range(5):
+        curryr = today.year
+        currmth = today.month
+        
+        last_6_mths.append(datetime.datetime(year=curryr,
+                                             month=currmth, day=1))
+        today = today - delta
+    
     s = ''
     onemth = datetime.timedelta(days=30)
     anchor_tmpl = mthly_tmpl
@@ -564,7 +581,9 @@ DATABASE_URI = './money.db'
 
 
 if __name__ == '__main__':
-    
+    import doctest
+    doctest.testmod()
+    sys.exit()    
 
     ### test whats in db per word
     action = sys.argv[1]
@@ -595,7 +614,7 @@ if __name__ == '__main__':
         categorise(matchers._matchers)
 
     elif action == 'summary':
-        summary()
+        summaryview()
         help_summary()
         create_chart()
 
