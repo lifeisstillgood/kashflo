@@ -88,7 +88,6 @@ import logging
 import datetime
 
 lgr = logging.getLogger(__name__)
-logging.basicConfig()
 
 ## import template code
 
@@ -104,7 +103,14 @@ def showremaining():
     rows = rs2obj(rs)
 
     
-    outstr = '<h2>Remaining</h2><table border="1">'
+    outstr = '''<!-- Uncategorised Items --> <h2>Remaining</h2><table border="1">'''
+    outstr += """<tr>
+<th>Type:;Desc</th>
+<th>Money In</th>
+<th>Money Out</th>
+<th>Date</th>
+</tr>"""  
+
     s = """<tr>
 <td>%s </td>
 <td>%s </td>
@@ -112,12 +118,13 @@ def showremaining():
 <td>%s </td>
 
 </tr>"""  
-
-    for r in rows:
+    ctr = len(rows)
+    
+    for r in sorted(rows, key=lambda r:r.desc):
         outstr += s % (r.desc, r.moneyin, r.moneyout, r.tdate)
-
-    return outstr + "</table>"
-
+    html = outstr + "</table>"
+    html += "<p> Total rows: %s" % ctr
+    return html
 
 def test(word):
 
@@ -179,7 +186,8 @@ class tran(object):
     
 
 def initdb():
-
+    lgr.info("Begin initialise DB")
+    
     conn = sqlite3.connect(DATABASE_URI)
     c = conn.cursor()
     c.execute("""CREATE TABLE trans(
@@ -192,7 +200,7 @@ balance TEXT,
 cty_low TEXT,
 cty_mid TEXT,
 cty_high TEXT);""")
-    
+    lgr.info("End initialise DB")
 
 def happystr(s):
     """mainly to replace errant pound signs
@@ -261,7 +269,7 @@ def rs2obj(rs):
     for row in rs:
         rowid = row[0]
         date = row[1]
-        desc = str(row[2]) + ":" + str(row[3])
+        desc = str(row[2]) + "::" + str(row[3])
         moneyout = row[4]
         moneyin = row[5]
 
@@ -335,7 +343,9 @@ def table_from_rs_bycategory(rs):
     for row in rs:
 
         if currdesc != row[1][:GROUPBY_FIRSTXCHARS]:
-            tblbody += """<tr><td colspan="8" align="right">%s: %s</td></tr>""" % (currdesc, currdescsum)
+            tblbody += """<tr>
+                          <td colspan="8" align="right">%s: %s
+                          </td></tr>""" % (currdesc, currdescsum)
             currdesc = row[1][:GROUPBY_FIRSTXCHARS]
             currdescsum = amount_to_float(row[6], row[7])                
 
@@ -354,6 +364,50 @@ def table_from_rs_bycategory(rs):
     tblbody += """<tr><td colspan="8" align="right">%s: %s</td></tr>""" % (currdesc, currdescsum)
 
     return tblbody,totalval
+
+
+
+def table_from_rs_bycategory2(rs):
+    """ """
+
+    tblbody = '''<!-- category2 -->
+    <table border="1">
+    <tr>
+    <td>Date</td> <td>Desc</td> <td>Type</td>
+     <td>Category High</td>
+     <td>TOut</td><td>TIn</td>
+    </tr>
+    '''
+    totalval = 0
+    curr_cty = ''
+    currctysum = 0
+    for row in rs:
+
+        print row
+        print 
+        if curr_cty != row[3]:
+            tblbody += """<tr>
+                          <td class="label label-primary" colspan="8" align="left">%s: %s
+                          </td></tr>""" % (curr_cty, currctysum)
+            curr_cty = row[3]
+            currctysum = amount_to_float(row[4], row[5])                
+
+            tmpl2 = "<tr> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> </tr>\n"
+            tblbody += tmpl2 % (row[0], row[1], row[2], row[3], row[4], row[5])
+            totalval += amount_to_float(row[4], row[5])
+
+            
+        else:
+            tmpl2 = "<tr> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td> <td>%s</td></tr>\n"
+            tblbody += tmpl2 % (row[0], row[1], row[2], row[3], row[4], row[5])
+            totalval += amount_to_float(row[4], row[5])
+
+            currctysum += amount_to_float(row[4], row[5])
+
+    tblbody += """<tr><td colspan="8" align="right">%s: %s</td></tr>""" % (curr_cty, currctysum)
+
+    return tblbody,totalval
+
 
 def past6mths():
     '''Give me a list of first day of past 6 mths
@@ -426,13 +480,23 @@ def summaryview(cty_high=None, FROMDATE=None, TODATE=None):
     html = ""
     
     
-    if cty_high is None: #we want all spending, by cty_high
+    if cty_high is None and not FROMDATE: #we want all spending, by cty_high
 
         c.execute("""select sum(tout), cty_high from trans
                  WHERE date(tdate) > '2012-01-01'
                  GROUP BY SUBSTR(cty_high,0,16) ORDER BY sum(tout) DESC;""")
         rs = c.fetchall()
         tblbody, totalval = table_from_rs_fullsummary(rs)
+
+    #: spending summ by month    
+    elif cty_high is None and FROMDATE:
+        c.execute("""SELECT tdate, tdesc, ttype, cty_high, tout, tin
+                  FROM trans
+                  WHERE tdate > '%s' AND tdate <= '%s'
+                  ORDER BY cty_high  DESC""" % (FROMDATE, TODATE))  ###i know sql injection
+        rs = c.fetchall()
+        tblbody, totalval = table_from_rs_bycategory2(rs)
+
         
     elif cty_high and FROMDATE:
         c.execute("""SELECT tdate, tdesc, ttype, cty_high, cty_mid, cty_low, tout, tin
@@ -530,11 +594,11 @@ def show_categories():
         hidict.setdefault(hi, []).append(phrase)
         lodict.setdefault(lo, []).append(phrase)        
 
-    s = '<table barder="1">'
+    s = '<table border="1">'
 
     for k in hidict:
-        s += "<tr><td> %s : %s</td></tr>" % (k, len(hidict[k]))
-        s += "<tr><td>%s</td></tr>" % ", ".join(hidict[k])
+        s += '''<tr><td class="label label-primary"> %s : %s</td></tr>''' % (k, len(hidict[k]))
+        s += '''<tr><td>%s</td></tr>''' % "<li>".join(hidict[k])
 
 
     s += "</table>"
@@ -579,16 +643,17 @@ def do_chart(chart_data):
 #############################################################
 DATABASE_URI = './money.db'
 
-
-if __name__ == '__main__':
+def runtests():
     import doctest
     doctest.testmod()
-    sys.exit()    
+
+if __name__ == '__main__':
 
     ### test whats in db per word
     action = sys.argv[1]
     f = sys.argv[2]
-
+    lgr.info("Action: %s", action)
+    
     if action == 'test':
 
         ### test for words 

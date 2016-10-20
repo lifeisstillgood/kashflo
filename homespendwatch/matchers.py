@@ -128,9 +128,9 @@ _matchers = [
 ['Phase Eight WEBSTORE UK',                     '-', '-', 'clothes'],
 ['Pizza Express',                               'eat out', 'eat out', 'leisure'],
 ['Post and Packing KINGS HILL',                 'ebay', '-', 'ebay'],
-['Pret A Manger UNIT 7,15 FRE',                 'eat out', 'eat out', 'leisure'],
+['Pret A Manger',                               'eat out', 'eat out', 'leisure'],
 ['Returned direct debit',                       'bank charges', '-', 'bankcharge'],
-['SELECT CREDIT CARD',                          'bank charges', '-', 'bankcharge'],
+['SELECT CREDIT CARD',                          'bank charges', '-', 'transferCC'],
 ['Shell Ham Hill SNODLAND',                     'fuel', 'car', 'travel'],
 ['Somerstown Coffee Hous LONDON',               'meeting', '-', 'expenses'],
 ['Spellbrook Leisure Ltd WALTHAM ABBEY',        'nazeing golf club', '-', 'eat out'],
@@ -202,7 +202,7 @@ _matchers = [
     ['Camping & Caravan Club','','','leisure'],
     ['Restaurant','','','leisure'],
     ['Barclays Capital','','','luxury'],
-    ['HSBC CREDIT CARD','','','bankcharge'],
+    ['HSBC CREDIT CARD','','','transferCC'],
     ['Hays Travel','','','leisure'],
     ['Ulwell Cottage','','','leisure'],
 
@@ -253,6 +253,107 @@ _matchers = [
     ['VIRGIN ACTIVE','','','gym'],
     ['PRUDENTIAL','','','insurance'],
     ['BE WISER INSURANCE','','','insurance'],
+
+
+    ['ACE FX','','','cash'],
+    ['71125063152','','','mortgage'],
+    ['AIG LIFE','','','insurance'],
+    ['EMMAMUMFORD','','','house'],
+    ['VFAST','','','house'],
+
+    ['DVLA','','','car'],
+    ['NETFLIX','','','house'],
+    ['ebbsfleet','','','travel'],    
+
+    ['REDWOOD IFA','','','insurance'],
+    ['SELF ASSESSMENT TA','','','tax'],
+    ['HAMLEYS','','','kids'],    
+    ['TOYS R US','','','kids'],
+    ['TVLICENSING','','','house'],
+    ['T.M. LEWIN','','','clothes'],    
+    ['MAMAS & PAPAS','','','kids'],
+    ['PANDORA','','','luxury'],
+    ['HOLBOROUGH SF CONNECT','','','travel'],    
+
+    ['bank credit mikado so','','','salary'],
+    ['Transfer from::074456 40693584','','','transfer'],
+    ['schuh','','','clothes'],    
+
+
+    ['costa','','','eatout'],
+    ['starbucks','','','eatout'],
+    ['Non-Sterling transaction fee','','','bankcharges'],    
+
+
+    ['costa','','','eat out'],
+    ['starbucks','','','eat out'],
+    ['Non-Sterling transaction fee','','','bankcharges'],    
+
+    ['TAYLOR ST','','','eat out'],
+    ['TAXI FARE','','','travel'],
+    ['Non-Sterling cash fee','','','bankcharges'],
+
+    ['WINDOWCLEANERNEW','','','house'],
+    ['WINDOW CLEAN','','','house'],
+    ['Transfer to','','','transfer'],    
+
+    ['Unarranged Overdraft Interest','','','bankcharges'],
+    ['Unpaid Transaction Fee -Direct Debit','','','bankcharges'],
+    ['5 CANADA SQUARE LONDON GB','','','eat out'],    
+
+    ['APPLE STORE','','','house'],
+    ['B AND Q','','','house'],
+    ['BOOTS','','','groceries'],
+    ['CENTER PARCS','','','holidays'],
+    ['CLOSE PREMIUM','','','insurance'],
+    ['EVANS CYCLES','','','health'],    
+    ['DART CHARGE','','','travel'],
+    ['DART-CHARGE','','','travel'],
+    ['GUFAA RAJA','','','eat out'],
+    ['MCDONALDS','','','eat out'],
+
+    ['PETS CORNER','','','pets'],
+    ['NICHOLSON & GRIFFIN ','','','mikadoexpenses'],
+    ['post office','','','ebay'],
+    ['PREMIER INN','','','mikadoexpenses'],
+    ['PADDOCK WOOD GARD','','','house'],
+    ['ROBERT DYAS','','','house'],    
+    ['SMIGGLE','','','kids'],
+    ['SMYTHS TOYS','','','kids'],
+
+    ['TINY-TOWN','','','kids'],
+    ['WATERSTONES','','','luxury'],
+    ['HOSP P PEMBURY','','','eat out'],
+    ['W M MORRISON','','','groceries'],
+    ['WH SMITH','','','groceries'],
+    ['ZOO ENTERPRISES','','','leisure'],
+
+    ['SHOWCASE CINEMA','','','leisure'],
+    ['SHELL','','','travel'],
+    ['NOTES','','','mikadoexpenses'],
+    ['SNAPPY SNAPS','','','leisure'],
+    ['STORE FINANCIAL BLUEW','','','gifts'],
+    ['MARKS&SPENCER','','','groceries'],
+    ['MARKS & SPENCER','','','groceries'],
+    ['MAIDSTONE HOSPITAL','','','health'],
+
+    ['LEGO STORE','','','kids'],
+    ['KENT LIFE HERITAGE','','','leisure'],
+    ['GAME RETAIL LTD','','','kids'],
+    ['CLINTONS','','','gifts'],
+    ['CAR PARKS KENT','','','travel'],
+    ['APCOA PARKING','','','travel'],
+    ['DIXONS','','','house'],
+    ['DLR CANARY WHARF','','','mikadoexpenses'],
+    ['LUL TICKET','','','mikadoexpenses'],
+    ['ISMASH UK TRADING','','','phone'],
+    ['NESPRESSO','','','luxury'],
+    ['THOMASCOOK AIRLINE','','','holiday'],
+    ['TIGER CANARY','','','kids'],
+    ['TIGER WESTFI','','','kids'],
+    ['WEST MALLING TAXI','','','travel'],
+    ['CARD FACTORY','','','gifts'],    
+
 ]
 
 
