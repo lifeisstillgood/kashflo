@@ -8,6 +8,7 @@ rowtmpl = """<tr>
 <td><a href="http://localhost:8080/summary/%s">%s</a></td>
 </tr>"""  
 
+
     
 ftr = '''
 </body>

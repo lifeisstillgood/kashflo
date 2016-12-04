@@ -414,13 +414,12 @@ def past6mths():
     '''
     pass
 
-def mk_monthly_summary_links(category_str):
+import calendar
+def mk_monthly_summary_links():
     """
-    Only show the last 6 mths
+    create links to ``summarymonth/2016/7`` for last 6 mths
 
-
-    aaarggh - this is painful.
-    do it simple style for now
+    there are some edge cases on months here 
     """
     # calc last 6 mths
     
@@ -434,33 +433,35 @@ def mk_monthly_summary_links(category_str):
         last_6_mths.append(datetime.datetime(year=curryr,
                                              month=currmth, day=1))
         today = today - delta
-    
+
+    #: we should now have 1st day of every month past 6 mths - but edge cases basd
+    tmpl = '''<li><a href="/summarymonth/{year}/{month}"> {yeartxt} {monthtxt}</a></li>'''
     s = ''
     onemth = datetime.timedelta(days=30)
-    anchor_tmpl = mthly_tmpl
     for dt in last_6_mths:
-        endofmonth = dt + onemth
-        s += anchor_tmpl % (category_str, dt.strftime("%Y-%m-%d"),
-                            endofmonth.strftime("%Y-%m-%d"),
-                            dt.strftime("%b %Y")) + "\n"
+        s += tmpl.format(year=dt.strftime("%Y"),
+                         month=dt.strftime("%m"),
+                         yeartxt=dt.strftime("%Y"),
+                         monthtxt=dt.strftime("%b"),
+
+                         ) + "\n"
     return s
                             
     
 def table_from_rs_fullsummary(rs):
     """ """
 
-    tblbody = '''<table border="1">
+    tblbody = '''%s<table border="1">
     <tr>
     <td>Amount</td> <td>Category High</td>
-    <td colspan="6">By Month, last 6 mths</td>
     </tr>
-    '''
+    ''' % mk_monthly_summary_links()
 
     totalval = 0
 
     for row in rs:
-        mthstr = mk_monthly_summary_links(row[1])
-        tblbody += rowtmpl % (row[0], row[1], row[1], mthstr)
+        #mthstr = mk_monthly_summary_links(row[1])
+        tblbody += rowtmpl % (row[0], row[1], row[1])
         totalval += amount_to_float(row[0], 0)###errors liurcking here
 
     tblbody += "</table>"
