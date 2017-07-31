@@ -1,4 +1,4 @@
-#### [word,     cty_low, cty_mid, cty_high] 
+#### [word,     cty_low, cty_mid, cty_high]
 #### a simple find word matches against the text of a transactions descripotion
 #### It is then used to categorise the transactions - lowest, middle highest abstraction
 
@@ -37,10 +37,10 @@ _matchers = [
 ['gas',                                         'british gas', 'utilities', 'utilities'],
 ['bt group',                                    'phone', 'utilities', 'utilities'],
 ['O2',                                    'phone', 'utilities', 'utilities'],
-['Carphone Warehouse',                                    'phone', 'utilities', 'utilities'],    
+['Carphone Warehouse',                                    'phone', 'utilities', 'utilities'],
 ['MID KENT WATER LTD',                          'water', 'utilities', 'utilities'],
 ['simplyhealth',                                'health', 'insurance', 'insurance'],
-    
+
 ['david lloyd',                                 'gym', 'gym', 'health'],
 ['Kings Hill dental',                                 'dental', 'dental', 'health'],
 ['bmihealth',                                 'dental', 'dental', 'health'],
@@ -59,7 +59,7 @@ _matchers = [
 ['paul brian',                                  'transfer', '-', 'transfer'],
 ['barclaycard',                            'transfer', '-', 'transfer'],
 ['hsbc card services',                          'transfer', '-', 'transfer'],
-['NATIONWIDE C/CARD',                           'transfer', '-', 'transfer'],    
+['NATIONWIDE C/CARD',                           'transfer', '-', 'transfer'],
 ['hsbc bank plc',                               'transfer', '-', 'transfer'],
 ['0220/648 872 431',                            'transfer', '-', 'transfer'],
 ['07-00-40',                                    'transfer', '-', 'transfer'],
@@ -75,7 +75,7 @@ _matchers = [
 ['Cheque:',                                     'cheque', 'cheque', 'chequeout'],
 ['Clacket Lane Serv',                           'fuel', 'car', 'travel'],
 ['Down Swan Street',                            'gifts', 'gifts', 'gifts'],
-['Cath Kidston',                            'gifts', 'clothes', 'clothes'],    
+['Cath Kidston',                            'gifts', 'clothes', 'clothes'],
 ['Kings Hill Pharmac',                          'medicince', 'medicine', 'medicine'],
 ['WWW.Johnlewis.Com',                           'homeware', 'homeware', 'house'],
 ['51*Jcrew Purchase 877-315-4709',              '-', '-', 'clothes'],
@@ -93,19 +93,19 @@ _matchers = [
 ['Google *Appspremier GOOGLE.COM/CH',           '-', '-', 'mikadoexpenses'],
 ['HSA',                                         '-', '-', 'health'],
 ['Halfords',                                    '-', '-', 'kids'],
-['Betty Lewis',                                    '-', '-', 'kids'],    
+['Betty Lewis',                                    '-', '-', 'kids'],
 ['Hobbycraft Group L TUNBRIDGE WEL',            '-', 'crafts', 'kids'],
 ['jojo maman bebe',            '-', 'crafts', 'kids'],
 ['Clarks shop',            '-', 'crafts', 'kids'],
-['Early learning',            '-', 'crafts', 'kids'],    
-    
+['Early learning',            '-', 'crafts', 'kids'],
+
 ['Homebase Ltd 072 AYLESFORD',                  '-', 'diy', 'house'],
 ['Humphreys of Kings Hill WEST MALLING',        'fish chips', '-', 'leisure'],
 ['Interest Charge',                             '-', 'bankcharges', 'bankcharge'],
 ['Interest On',                             '-', 'bankcharges', 'bankcharge'],
 ['Late Payment',                             '-', 'bankcharges', 'bankcharge'],
-['MERCHANDISE INTEREST',                             '-', 'bankcharges', 'bankcharge'],    
-['Over Credit',                             '-', 'bankcharges', 'bankcharge'],    
+['MERCHANDISE INTEREST',                             '-', 'bankcharges', 'bankcharge'],
+['Over Credit',                             '-', 'bankcharges', 'bankcharge'],
 ['JJB Sports',                                  '-', '-', 'clothes'],
 ['John Lewis',                                  '-', '-', 'clothes'],
 ['K J Edwards TONBRIDGE',                       '-', '-', 'clothes'],
@@ -149,11 +149,11 @@ _matchers = [
 ['WWW.Nda.Ac.UK NOTTINGHAM',                    'annauni', '-', 'education'],
 ['WWW.Paultonspark.Co.UK ROMSEY',               'peppapig', 'daysout', 'leisure'],
 ['alexander house crawley',                     'spa', 'daysout', 'leisure'],
-['rowhill reservations',                     'spa', 'daysout', 'leisure'],    
-['summer lodge',                     'spa', 'daysout', 'leisure'],    
+['rowhill reservations',                     'spa', 'daysout', 'leisure'],
+['summer lodge',                     'spa', 'daysout', 'leisure'],
 
 ['phase eight',                     '-', '-', 'clothes'],
-['next directory',                     '-', '-', 'clothes'],    
+['next directory',                     '-', '-', 'clothes'],
 ['sweaty betty',                     '-', '-', 'clothes'],
 ['Peller GREENHITHE',                     '-', '-', 'clothes'],
 ['mintvelvet',                     '-', '-', 'clothes'],
@@ -161,21 +161,21 @@ _matchers = [
 ['gap',                     '-', '-', 'clothes'],
 ['superdry',                     '-', '-', 'clothes'],
 ['fatface',                     '-', '-', 'clothes'],
-['topshop',                     '-', '-', 'clothes'],                    
+['topshop',                     '-', '-', 'clothes'],
 
 
 ['WWW.Preciouslittleone. INTERNET',             'car', 'car', 'car'],
 ['WWW.Tickets.LONDON2012 LONDON  WC2H',         'olympics', 'daysout', 'leisure'],
-['ROyal Albert Hall',         'GaryBarlow', 'daysout', 'leisure'],    
+['ROyal Albert Hall',         'GaryBarlow', 'daysout', 'leisure'],
 ['West Malling Flowers WEST MALLING',           'flowers', '-', 'leisure'],
 
 ['Ikea',           'furniture', 'furniture', 'house'],
 ['White Company',           'furniture', 'furniture', 'house'],
-['Dunelm',           'furniture', 'furniture', 'house'],        
+['Dunelm',           'furniture', 'furniture', 'house'],
 ['Sewing Room',           'furniture', 'furniture', 'house'],
 ['Laura Ashley',           'furniture', 'furniture', 'house'],
 ['Currys',           'TV', 'furniture', 'house'],
-['House of Fraser',           '-', 'furniture', 'house'],    
+['House of Fraser',           '-', 'furniture', 'house'],
 
 ['Ticketline',           '-', '-', 'leisure'],
 ['Camping International',                       'CampingGear', 'Camping', 'house'],
@@ -214,7 +214,7 @@ _matchers = [
     ['INHERITANCE LAW','','','probate'],
     ['CHORUSLAW','','','probate'],
     ['WALKIES LTD','','','pets'],
-    
+
     ['UTILITY WAREHOUSE','','','utilities'],
     ['AIG LIFE LIMITED','','','insurance'],
     ['VIRGIN ACTIVE','','','gym'],
@@ -225,7 +225,7 @@ _matchers = [
     ['FRANKIE & BENNYS','','','eat out'],
     ['BYRON HAMBURGERS','','','eat out'],
 
-    
+
     ['UW CASHBACK CARD','','','utilities'],
     ['ATM Withdrawal','','','cash'],
     ['KENT MEDICAL IMAGING LTD','','','health'],
@@ -263,31 +263,31 @@ _matchers = [
 
     ['DVLA','','','car'],
     ['NETFLIX','','','house'],
-    ['ebbsfleet','','','travel'],    
+    ['ebbsfleet','','','travel'],
 
     ['REDWOOD IFA','','','insurance'],
     ['SELF ASSESSMENT TA','','','tax'],
-    ['HAMLEYS','','','kids'],    
+    ['HAMLEYS','','','kids'],
     ['TOYS R US','','','kids'],
     ['TVLICENSING','','','house'],
-    ['T.M. LEWIN','','','clothes'],    
+    ['T.M. LEWIN','','','clothes'],
     ['MAMAS & PAPAS','','','kids'],
     ['PANDORA','','','luxury'],
-    ['HOLBOROUGH SF CONNECT','','','travel'],    
+    ['HOLBOROUGH SF CONNECT','','','travel'],
 
     ['bank credit mikado so','','','salary'],
     ['Transfer from::074456 40693584','','','transfer'],
-    ['schuh','','','clothes'],    
-
-
-    ['costa','','','eatout'],
-    ['starbucks','','','eatout'],
-    ['Non-Sterling transaction fee','','','bankcharges'],    
+    ['schuh','','','clothes'],
 
 
     ['costa','','','eat out'],
     ['starbucks','','','eat out'],
-    ['Non-Sterling transaction fee','','','bankcharges'],    
+    ['Non-Sterling transaction fee','','','bankcharges'],
+
+
+    ['costa','','','eat out'],
+    ['starbucks','','','eat out'],
+    ['Non-Sterling transaction fee','','','bankcharges'],
 
     ['TAYLOR ST','','','eat out'],
     ['TAXI FARE','','','travel'],
@@ -295,18 +295,18 @@ _matchers = [
 
     ['WINDOWCLEANERNEW','','','house'],
     ['WINDOW CLEAN','','','house'],
-    ['Transfer to','','','transfer'],    
+    ['Transfer to','','','transfer'],
 
     ['Unarranged Overdraft Interest','','','bankcharges'],
     ['Unpaid Transaction Fee -Direct Debit','','','bankcharges'],
-    ['5 CANADA SQUARE LONDON GB','','','eat out'],    
+    ['5 CANADA SQUARE LONDON GB','','','eat out'],
 
     ['APPLE STORE','','','house'],
     ['B AND Q','','','house'],
     ['BOOTS','','','groceries'],
     ['CENTER PARCS','','','holidays'],
     ['CLOSE PREMIUM','','','insurance'],
-    ['EVANS CYCLES','','','health'],    
+    ['EVANS CYCLES','','','health'],
     ['DART CHARGE','','','travel'],
     ['DART-CHARGE','','','travel'],
     ['GUFAA RAJA','','','eat out'],
@@ -317,7 +317,7 @@ _matchers = [
     ['post office','','','ebay'],
     ['PREMIER INN','','','mikadoexpenses'],
     ['PADDOCK WOOD GARD','','','house'],
-    ['ROBERT DYAS','','','house'],    
+    ['ROBERT DYAS','','','house'],
     ['SMIGGLE','','','kids'],
     ['SMYTHS TOYS','','','kids'],
 
@@ -352,8 +352,41 @@ _matchers = [
     ['TIGER CANARY','','','kids'],
     ['TIGER WESTFI','','','kids'],
     ['WEST MALLING TAXI','','','travel'],
-    ['CARD FACTORY','','','gifts'],    
+    ['CARD FACTORY','','','gifts'],
+    ['J.L F . S .','','','transferCC'],
+    ['ASSEMBLY HALL TUNBRIDGE WEL', '','',   'kids'],
 
+    ['CMT (UK) LTD - GLASGOW', '','', 'travel'],
+    ['HOLMES PLACE', '','', 'health'],
+    ['RUXLEY MANOR GARDE', '','Santa-Grotto', 'kids'],
+    ['THE ENTERTAINER', '','', 'kids'],
+    ['THE FARMHOUSE WEST MALLING', '','', 'eat out'],
+    ['VITALITY LIFE', '','', 'insurance'],
+
+    ['ALISON J BUTCHER', '','', 'health'],
+    ['BABY EXPLORERS', '','', 'kids'],
+    ['BARHAM CATTERY', '','', 'holidays'],
+
+    ['EMMIESHOES', '','', 'kids'],
+    ['H LAAKSONEN CUTLER', '','', 'gifts'],
+    ['HAND4HIRE LTD', '','', 'household'],
+
+    ['HEIDI EASBY PHOTO', '','', 'kids'],
+    ['HOMEDICS GROUP', '','', 'health'],
+    ['JAIME BLACKBURN', '','', 'kids'],
+    ['AmazonPrime Membership','','', 'leisure'],
+    ['MRS C A KEMP', '','','kids'],
+    ['MRS N DAY', '', '', 'kids'],
+    ['S MARSH', '','', 'kids'],
+    ['STEPHANIE CHAPMAN', '','', 'kids'],
+    ['SUPERSKILLS UK', '','', 'kids'],
+    ['TRACY HATTERSLEY', '','', 'gifts'],
+
+    ['BROWNS','','','eat out'],
+    ['BUBBA GUMP SHRIMP','','', 'eat out'],
+    ['PAPAS BARN','','','eat out'],
+
+    ['OP/STOCKPORT CLIEN','','VWcar','transfer'],
 ]
 
 
